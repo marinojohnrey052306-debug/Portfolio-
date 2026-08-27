@@ -7,6 +7,7 @@
     <title>John Rey Mariño | Portfolio</title>
 
     <style>
+
         /* =========================
            GLOBAL
         ========================= */
@@ -22,7 +23,6 @@
             --primary: #7c3aed;
             --primary-dark: #5b21b6;
             --dark: #17112b;
-            --dark-light: #24183f;
             --background: #f7f5ff;
             --card: #ffffff;
             --text: #211a2d;
@@ -51,8 +51,8 @@
             background: var(--dark);
             color: white;
 
-            height: 72px;
-            padding: 0 8%;
+            min-height: 72px;
+            padding: 15px 8%;
 
             display: flex;
             justify-content: space-between;
@@ -78,11 +78,10 @@
         }
 
         .nav-links li a {
-            color: #ffffff;
+            color: white;
             font-size: 13px;
             font-weight: bold;
             letter-spacing: 1px;
-
             transition: 0.3s;
         }
 
@@ -92,7 +91,7 @@
 
 
         /* =========================
-           HOME / HERO
+           HOME
         ========================= */
 
         .hero {
@@ -177,13 +176,12 @@
 
         .hero-button:hover {
             transform: translateY(-3px);
-
             background: #f3e8ff;
         }
 
 
         /* =========================
-           GENERAL SECTIONS
+           SECTIONS
         ========================= */
 
         section {
@@ -192,17 +190,13 @@
 
         .section-title {
             font-size: 38px;
-
             margin-bottom: 8px;
-
             color: var(--text);
         }
 
         .section-description {
             color: var(--muted);
-
             margin-bottom: 40px;
-
             font-size: 16px;
         }
 
@@ -228,16 +222,34 @@
                 0 18px 45px rgba(91, 33, 182, 0.10);
         }
 
+
+        /* =========================
+           FIXED PROJECT IMAGE
+        ========================= */
+
         .project-image {
             width: 100%;
-            height: 450px;
 
-            object-fit: cover;
+            /*
+                IMPORTANT:
+                Walang fixed height.
+                Automatic ang height base sa
+                original size ng screenshot.
+            */
+
+            height: auto;
 
             display: block;
 
+            object-fit: contain;
+
             background: #ede9fe;
         }
+
+
+        /* =========================
+           PROJECT CONTENT
+        ========================= */
 
         .project-content {
             padding: 38px;
@@ -425,7 +437,7 @@
 
 
         /* =========================
-           CONTACT / FOOTER
+           CONTACT
         ========================= */
 
         footer {
@@ -456,31 +468,37 @@
 
 
         /* =========================
-           MOBILE RESPONSIVE
+           MOBILE
         ========================= */
 
         @media (max-width: 700px) {
 
             .navbar {
-                height: 65px;
+                min-height: 65px;
 
-                padding: 0 5%;
+                padding: 12px 5%;
+
+                gap: 10px;
             }
 
             .logo {
-                font-size: 16px;
+                font-size: 15px;
+
+                white-space: nowrap;
             }
 
             .nav-links {
-                gap: 13px;
+                gap: 12px;
             }
 
             .nav-links li a {
                 font-size: 9px;
 
-                letter-spacing: 0.5px;
+                letter-spacing: 0.3px;
             }
 
+
+            /* HOME */
 
             .hero {
                 min-height: 80vh;
@@ -499,6 +517,8 @@
             }
 
 
+            /* SECTIONS */
+
             section {
                 padding: 65px 7%;
             }
@@ -508,9 +528,17 @@
             }
 
 
+            /* PROJECT IMAGE */
+
             .project-image {
-                height: 260px;
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: contain;
             }
+
+
+            /* PROJECT CONTENT */
 
             .project-content {
                 padding: 25px;
@@ -521,15 +549,14 @@
             }
 
 
+            /* DETAILS */
+
             .details {
                 grid-template-columns: 1fr;
             }
 
 
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
+            /* BUTTONS */
 
             .buttons {
                 flex-direction: column;
@@ -537,6 +564,14 @@
 
             .button {
                 text-align: center;
+                width: 100%;
+            }
+
+
+            /* ABOUT */
+
+            .about-container {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -640,8 +675,8 @@
             <!--
                 APP SCREENSHOT
 
-                Put this image in the same folder
-                as this index.html file:
+                Make sure this image is in the
+                SAME FOLDER as index.html:
 
                 Screenshot_20260827-091339.jpg
             -->
@@ -653,8 +688,9 @@
             >
 
 
-            <div class="project-content">
+            <!-- PROJECT INFORMATION -->
 
+            <div class="project-content">
 
                 <h3>
                     EduVal — Evaluating for Students
@@ -670,11 +706,9 @@
                 </p>
 
 
-
-                <!-- PROJECT INFORMATION -->
+                <!-- PROJECT DETAILS -->
 
                 <div class="details">
-
 
                     <div class="detail-box">
 
@@ -697,15 +731,12 @@
 
                     </div>
 
-
                 </div>
-
 
 
                 <!-- PROJECT LINKS -->
 
                 <div class="buttons">
-
 
                     <a
                         href="https://marinojohnrey052306-debug.github.io/Evaluating-for-Students/"
@@ -724,12 +755,10 @@
                         View GitHub
                     </a>
 
-
                 </div>
 
 
-
-                <!-- OPTIONAL CLIENT FEEDBACK -->
+                <!-- CLIENT FEEDBACK -->
 
                 <div class="feedback">
 
@@ -742,7 +771,6 @@
                     when feedback becomes available.
 
                 </div>
-
 
             </div>
 
@@ -822,9 +850,13 @@
         </p>
 
         <p>
-            <a href="mailto:marinojohnrey052306@gmail.com">
+
+            <a
+                href="mailto:marinojohnrey052306@gmail.com"
+            >
                 marinojohnrey052306@gmail.com
             </a>
+
         </p>
 
         <br>
@@ -837,4 +869,4 @@
 
 
 </body>
-</html>
+    </html>
