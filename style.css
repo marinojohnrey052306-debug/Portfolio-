@@ -154,8 +154,6 @@ body {
   border-radius: 12px;
   overflow: hidden;
   width: 100%;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
   transition: border-color 0.3s, transform 0.3s;
 }
@@ -165,12 +163,12 @@ body {
   transform: translateY(-4px);
 }
 
-/* Responsive Image Fix */
+/* Responsive Image Fix - Nilagyan ng eksaktong height control */
 .project-img {
   width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
   background-color: #090d16;
   border-bottom: 1px solid var(--border);
   display: block;
@@ -275,5 +273,8 @@ footer {
   }
   .project-links {
     flex-direction: column;
+  }
+  .project-img {
+    height: 200px;
   }
 }
